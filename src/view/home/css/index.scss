@@ -1,0 +1,19 @@
+   .v-slider {
+       margin: 0 auto;
+   }
+   
+   .v-slider .v-slider-indicator-prev,
+   .v-slider .v-slider-indicator-next {
+       margin-top: -10px;
+       background: none;
+       font-size: 42px;
+       color: #999;
+   }
+   
+   .v-slider .v-slider-indicator-prev {
+       left: 10px;
+   }
+   
+   .v-slider .v-slider-indicator-next {
+       right: 10px;
+   }

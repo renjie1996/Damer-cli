@@ -1,0 +1,5 @@
+node_modules/
+build/
+/components/
+npm-debug.log
+.idea
