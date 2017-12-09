@@ -14,6 +14,7 @@
   import sidebar from 'components/navigation.vue';
   import headNav from 'components/header.vue';
   import footerNav from 'components/footer.vue';
+  import { mapActions, mapMutations } from 'vuex';
   import * as Util from "utils";
   import * as Api from 'api/index.js'
   export default {
@@ -26,10 +27,17 @@
       }
     },
     methods: {
+      ...mapActions("modules", [
+        "getBaseinfo"
+      ]),
+      ...mapMutations("modules", [
+        "INIT_BASEINFO"
+      ]),
       loadData: function() {
         var self = this;
+        // this.getBaseInfo()  //在vuex中处理请求
         Api.getBaseInfo().then((data)=>{
-          self.$store.dispatch('init/baseinfo', data);
+          self.INIT_BASEINFO(data.list);
           setTimeout(()=>{
             self.baseInfo = data;
             self.showLoading = false;
